@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     
     <!--=============== BOXICONS ===============-->
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
@@ -20,22 +20,32 @@
     <header class="header">
         <nav class="nav container">
             <div class="nav__logo">
-                <img src="styles/images/pizza-logo.png" alt="Pizza Shid logo"><span>Pizza Shid</span>
+                <img src="assets/images/pizza-logo.png" alt="Pizza Shid logo"><span>Pizza Shid</span>
             </div>
 
             <div class="nav__menu" id="menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="#" class="nav__link active">Home</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Menu</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Delivery</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">About</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Blog</a></li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link active button-active">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link button-active">Menu</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link button-active">Delivery</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link button-active">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link button-active">Blog</a>
+                    </li>
                 </ul>
                 
                 <div class="nav__others">
-                    <i class='bx bx-search'></i>
-                    <i class='bx bx-cart'></i>
-                    <a href="#" class="nav__sign-in button">Sign in</a>
+                    <i class='bx bx-search button-active'></i>
+                    <i class='bx bx-cart button-active'></i>
+                    <a href="#" class="nav__sign-in button button-active">Sign in</a>
                     <i class='bx bx-x nav__close' id="close-button"></i>
                 </div>
             </div>
@@ -49,16 +59,105 @@
 
         <!--=============== HOME ===============-->
         <section class="home">
-            
+            <div class="home__container container">
+                <h1 class="home__title">We Have The <span>Best pizza!</span></h1>
+                <p class="home__desc">Time to enjoy our delicious pizza</p>
+                <a href="#" class="button button-active">Order Online</a>
+                <div class="home__img-container">
+                    <img class="home__img" src="assets/images/pizza-home.png" alt="Big Pizza">
+                    <div class="home__img-effect"></div>
+                </div>
+            </div>
         </section>
 
         <!--=============== TRANDINGS ===============-->
-        <section class="trandings">
-            
+        <section class="trending section">
+            <div class="trending__container container">
+                <h2 class="trending__title">Trending Recipes</h2>
+
+                <div class="trending__cards">
+                    <div class="trending__card">
+                        <img class="trending__card-img" src="assets/images/card1.png" alt="">
+                        <div class="trending__card-content">
+                            <h3 class="trending__card-title">Cheese Lovers</h3>
+
+                            <p class="trending__card-desc">
+                                Combination of Alfredo sauce and two cheeses – Romano, and Parmesan.
+                            </p>
+
+                            <span class="trending__card-price">$20.00</span>
+                            
+                            <form class="trending__card-form" action="">
+                                <select class="trending__card-select" name="" id="">
+                                    <option value="regular">Regular</option>
+                                    <option value="option2">Option 2</option>
+                                    <option value="option3">Option 3</option>
+                                    <option value="option4">Option 4</option>
+                                    <option value="option5">Option 5</option>
+                                </select>
+
+                                <button class="trending__card-btn button button-active">Add to cart</button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="trending__card">
+                        <img class="trending__card-img" src="assets/images/card2.png" alt="">
+                        <div class="trending__card-content">
+                            <h3 class="trending__card-title">Cheese Lovers</h3>
+
+                            <p class="trending__card-desc">
+                                Combination of Alfredo sauce and two cheeses – Romano, and Parmesan.
+                            </p>
+
+                            <span class="trending__card-price">$20.00</span>
+                            
+                            <form class="trending__card-form" action="">
+                                <select class="trending__card-select" name="" id="">
+                                    <option value="regular">Regular</option>
+                                    <option value="option2">Option 2</option>
+                                    <option value="option3">Option 3</option>
+                                    <option value="option4">Option 4</option>
+                                    <option value="option5">Option 5</option>
+                                </select>
+
+                                <button class="trending__card-btn button button-active">Add to cart</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="trending__card">
+                        <img class="trending__card-img" src="assets/images/card3.png" alt="">
+                        <div class="trending__card-content">
+                            <h3 class="trending__card-title">Cheese Lovers</h3>
+
+                            <p class="trending__card-desc">
+                                Combination of Alfredo sauce and two cheeses – Romano, and Parmesan.
+                            </p>
+
+                            <span class="trending__card-price">$20.00</span>
+                            
+                            <form class="trending__card-form" action="">
+                                <select class="trending__card-select" name="" id="">
+                                    <option value="regular">Regular</option>
+                                    <option value="option2">Option 2</option>
+                                    <option value="option3">Option 3</option>
+                                    <option value="option4">Option 4</option>
+                                    <option value="option5">Option 5</option>
+                                </select>
+
+                                <button class="trending__card-btn button button-active">Add to cart</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </section>
         
         <!--=============== JS ===============-->
-        <script src="styles/main.js"></script>
+        <script src="assets/js/main.js"></script>
 
     </main>
 </body>

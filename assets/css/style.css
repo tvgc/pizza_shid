@@ -1,0 +1,539 @@
+/*
+--- 01 TYPOGRAPHY SYSTEM
+
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font weights
+light: 300
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+- Line heights
+Default: 1
+Small: 1.05
+Medium: 1.2
+Paragraph default: 1.6
+Large: 1.8
+
+- Letter spacing
+-0.5px
+0.75px
+
+--- 02 COLORS
+
+- Primary: #F44A25
+- Tints (matiz): there is no colors variations 
+
+- Shades: there is no shades variations
+
+- Accents:
+- Greys
+
+#FFFDFD
+#BDBDBD
+#333333
+
+--- 05 SHADOWS
+
+0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+
+--- 06 BORDER-RADIUS
+
+Default: 9px
+Medium: 11px
+
+--- 07 WHITESPACE
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+/*************************/
+/* GOOGLE FONTS */
+/*************************/
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap');
+
+/*************************/
+/* VARIABLES CSS */
+/*************************/
+
+:root {
+    --header-height: 10rem;
+
+    /*========== Colors ==========*/
+    --first-color: #F44A25;
+
+    --text-color: #333333;
+    --border-color-01: #BDBDBD;
+    --border-color-02: #333333;
+
+    --body-color: #FFFFFF;
+
+     /*========= Font and typography =========*/
+    /*.5rem = 5px | 1rem = 10px | 
+    1rem = 62,50% */
+    --body-font: 'Fira Sans', sans-serif;
+
+    --biggest-font-size: 6.2rem;
+    --bigger-font-size: 3.0rem;
+    --big-font-size: 2.0rem;
+
+    --h2-font-size: 3.0rem;
+    --h3-font-size: 2.0rem;
+
+    --normal-font-size: 1.4rem;
+    --small-font-size: 1.2rem;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;    
+}
+
+/* Responsive typography */
+/* 64em = 1024px */
+@media screen and (min-width: 64em) {
+    :root {
+        --biggest-font-size: 7.4rem;
+        --bigger-font-size: 3.6rem;
+        --big-font-size: 2.4rem;
+    
+        --h2-font-size: 3.6rem;
+        --h3-font-size: 2.4rem;
+    
+        --normal-font-size: 1.6rem;
+        --small-font-size: 1.4rem;
+    }
+}
+
+/*************************/
+/* BASE */
+/*************************/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* font-size: 10px; */
+
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* Percentage of user's browser font-size setting */
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: #FFFFFF;
+    color: var(--text-color);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button {
+    font-family: var(--body-font);
+    outline: none;
+    border: none;
+}
+
+/*************************/
+/* REUSABLE CLASSES */
+/*************************/
+
+.container {
+    max-width: 124rem;
+    padding-right: 2.4rem;
+    padding-left: 2.4rem;
+    margin-right: auto;
+    margin-left: auto;
+    /* margin: 0 2.4rem; usual bedimcode form */
+}
+
+.section {
+    padding: 6rem 0;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.8rem 2.4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 20px;
+    background-color: var(--first-color);
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.button-active:active {
+    transform: translate(1px, 1px);
+}
+
+/*************************/
+/* HEADER & NAV */
+/*************************/
+
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: var(--header-height);
+    transition: 0.4s;
+    background-color: #FFFFFF;
+    z-index: var(--z-fixed);
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.nav__logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav__logo span {
+    display: inline-block;
+    /* max-width: 100%; */
+    font-size: var(--big-font-size);
+    font-weight: 600;    
+    width: 15rem;
+}
+
+.nav__menu {
+    position: absolute;
+    top: -1000%;
+    left: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 0 2.4rem 2.4rem;
+    box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.085);
+    transition: ease 0.6s;
+    z-index: 999;
+}
+
+.nav__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    order: 1;
+    padding:  0 0 3.2rem 0;
+}
+
+.nav__item {
+    margin: 1rem;
+}
+
+.nav__link {
+    display: inline-block;
+    width: 100%;
+    padding: 0.8rem 1.6rem;
+    font-size: var(--big-font-size);
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+/* selected link */
+.active {
+    color: var(--first-color)
+}
+
+.nav__others {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: var(--big-font-size);
+    height: var(--header-height);
+}
+
+.nav__others i {
+    cursor: pointer;
+}
+
+.nav__sign-in {
+    font-size: var(--small-font-size);
+    width: 9rem;
+}
+
+.nav__close {
+    font-size: var(--bigger-font-size);
+    transform: translateX(-10px);
+    cursor: pointer;
+}
+
+.nav__close:active {
+    transform: translate(-9px, 1px);
+}
+
+.nav__toggle {
+    font-size: var(--bigger-font-size);
+    transform: translateX(-10px);
+    cursor: pointer;
+    /* z-index: 1; */
+}
+
+.nav__toggle:active {
+    transform: translate(-9px, 1px);
+}
+
+/* open close menu */
+.show {
+    top: 0;
+}
+
+.display-none {
+    display: none;
+}
+
+.display-block {
+    display: block;
+}
+
+/* nav breakpoint*/
+@media screen and (min-width: 54em){
+    .nav__menu {
+        position: static;
+        width: 100%;
+        background-color: #FFFFFF;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 0;
+        box-shadow: none;
+        transition: none;
+        z-index: 999;
+    }
+
+    .nav__list {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        order: 0;
+        padding: 0;
+    }
+
+    .nav__item {
+        margin: 0;
+    }
+
+    .nav__others {
+        /* width: 100%; */
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 3rem;
+        font-size: var(--big-font-size);
+        height: var(--header-height);
+    }
+
+    .nav__others .nav__close {
+        display: none;
+    }
+    
+    .nav__toggle {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 64em){
+    .nav__sign-in {
+        font-size: var(--small-font-size);
+        width: 10rem;
+    }
+}
+
+/*************************/
+/* HOME */
+/*************************/
+
+.home {
+    padding-top: var(--header-height);
+}
+
+.home__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 549px;
+    position: relative;
+    border-radius: 27px 0 0 27px;
+    overflow: hidden;
+}
+
+.home__title {
+    font-size: var(--biggest-font-size);
+    font-weight: 300;
+    margin-bottom: 3.2rem;
+}
+
+.home__title span {
+    font-weight: 700;
+}
+
+.home__desc {
+    font-size: var(--bigger-font-size);
+    font-weight: 300;
+    margin-bottom: 3.2rem;
+}
+
+.home__img-container {
+    width: 765px;
+    height: 100%;
+    position: absolute; /*to position the image */
+    top: 0;
+    right: 0;
+    z-index: -3;
+}
+
+.home__img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.home__img-effect {
+    width: 100%;
+    height: 100%;    
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.747);
+    z-index: -1;
+}
+  
+/*************************/
+/* TRENDING */
+/*************************/
+
+.trending__cards {
+    display: flex;
+    flex-basis: 290px; /*tesntei usar mas não fixava a largura. então usei o width na classe abaixo*/
+    flex-wrap: wrap;
+    gap: 6.0rem;
+}
+
+.trending__title {
+    margin-bottom: 6rem;
+    font-size: var(--bigger-font-size);
+    text-align: center;
+}
+
+.trending__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 290px;
+    height: 530px;
+    margin: 0 auto;
+    padding: 2.4rem;
+    border: solid var(--border-color-01)2px;
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.trending__card-img {
+    position: absolute;
+    top: -0.2rem;
+    left: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 32%, 0 81%);
+}
+
+.trending__card-title {
+    margin-bottom: 2.4rem;
+    font-size: var(--h3-font-size);
+    text-align: center;
+    color: #000000;
+}
+
+.trending__card-desc {
+    height: 4.4rem;
+    font-weight: 300;
+    font-size: var(--small-font-size);
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 3.0rem;
+}
+
+.trending__card-price {
+    display: block;
+    margin-bottom: 2.4rem;
+    text-align: center;
+    font-size: var(--big-font-size);
+    font-weight: 600;
+}
+
+.trending__card-select {
+    display: block;
+    width: 100%;
+    padding: 0.8rem 2.4rem;
+    font-size: var(--normal-font-size);
+    font-weight: 400;
+    border-radius: 20px;
+    margin-bottom: 1.2rem;
+}
+
+.trending__card-btn {
+    width: 100%;
+    font-size: var(--normal-font-size);
+}
+
+/*************************/
+/* MEDIA QUERY */
+/*************************/
+
+@media screen and (min-width: 78em) {
+    .container {
+        padding-right: 0;
+        padding-left: 0;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media screen and (min-width: 78em) {
+    .home__img-effect {
+        background-color: transparent;
+        background-image: linear-gradient(to right,#FFFFFF 0%,#FFFFFF 150px, transparent 442px);
+    }
+}
+
+@media screen and (min-width: 41em) {
+    .home__img-effect {
+        background-color: transparent;
+        background-image: linear-gradient(to right,#FFFFFF 0%,#FFFFFF 150px, transparent 99%);
+    }
+}

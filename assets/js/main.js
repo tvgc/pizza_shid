@@ -7,7 +7,7 @@ const showMenu = ()=>{
 }
 
 menuButton.addEventListener('click', event=>{
-    event.currentTarget.classList.add('display-none')
+    // event.currentTarget.classList.add('display-none')
     showMenu()
 })
 
@@ -25,4 +25,10 @@ const showMenuButton = ()=>{
 closeButton.addEventListener('click', ()=>{
     closeMenu()
     showMenuButton()
+})
+
+/*************** BLUR ***************/
+
+menu.addEventListener('blur', ()=>{
+    closeMenu()
 })
